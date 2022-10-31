@@ -1,58 +1,177 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
-    margin: 30px 50px;
+  margin: 30px 50px;
+  position: relative;
 }
 
-.profile {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+#arrow, #dot {
+  position: absolute;
+  right: 15%;
+  cursor: pointer;
 }
 
-.userImg {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+#dot {
+  opacity: 0;
 }
 
-#twitter {
-    padding: 30px 0;
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
- #slack {
-    display: none;
- }
+.box {
+  position: relative;
+  cursor: pointer;
+}
+
+.box:hover #profile__img{
+  filter: blur(2px) brightness(60%);
+}
+
+.box:hover #icon{
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+#icon{
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  transition: all .5s;
+  backface-visibility: hidden;
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+}
+
+#slack {
+  display: none;
+}
 
 #twitter__link,
 #btn__zuri,
 #books,
 #book__python,
 #pitch,
-#book__design{
-    text-decoration: none;
-    text-align: center;
+#book__design {
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  color: black;
+  padding: 30px 0;
+  background-color: #EAECF0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#twitter {
+  padding: 30px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#twitter__link:hover,
+#btn__zuri:hover,
+#books:hover,
+#book__python:hover,
+#pitch:hover,
+#book__design:hover {
+  background-color: #D0D5DD;
+}
+
+#social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+#github {
+  margin-left: 30px;
+}
+
+#footer {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#footer h1 {
+  color: #667085;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+  #twitter__link,
+#btn__zuri,
+#books,
+#book__python,
+#pitch,
+#book__design  {
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+  #twitter {
+    padding: 20px 0;
     font-size: 18px;
-    font-weight: 600;
-    display: block;
-    color: black;
-    padding: 30px 0;
-    background-color: #EAECF0;
-    border-radius: 8px;
-    margin-bottom: 20px;
+  }
+
+  #footer {
+    flex-direction: column;
+  align-items: flex-start;
+  margin-top: 50px;
+  }
+
+  .container {
+    margin: 30px 20px;
+  }
+
+  #footer h1 {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  #footer img {
+    height: 20px;
+  }
+
+  #social {
+    margin: 30px 0;
+  }
+
+  #dot {
+    opacity: 1;
+    right: 2%;
+  }
+
+  #arrow {
+    opacity: 0;
+  }
+
+  #footer h1 {
+    font-size: 14px;
+  }
 }
